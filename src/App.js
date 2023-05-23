@@ -1,24 +1,40 @@
 import logo from './logo.svg';
 import './App.css';
+import Home from "./home/Home";
+import Admin from "./admin/Admin";
+import Login from "./login/Login";
+import RegDriver from "./register/RegDriver";
+import RegUser from "./register/RegUser";
+import UpdtUser from "./update/UpdtUser";
+import UpdtDriver from "./update/UpdtDriver";
+import SetPickup from "./setPickup/SetPickup";
+
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/">
+        <Route index element={<Home />} />
+        <Route path="login" element={<Login />} />
+        <Route path="admin" element={<Admin />} />
+        <Route path="regDriver" element={<RegDriver />} />
+        <Route path="regUser" element={<RegUser/>} />
+        <Route path="updtUser" element={<UpdtUser/>} />
+        <Route path="updtDriver" element={<UpdtDriver/>} />
+        <Route path="setPickup" element={<SetPickup/>} />
+      
+      
+      
+          
+      
+       
+     
+      </Route>
+    </Routes>
+  </BrowserRouter>
   );
 }
 

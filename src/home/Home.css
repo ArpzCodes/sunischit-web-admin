@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    background-color: #f5f5f5;
+  }
+  
+  .nav-link , a {
+    margin-right: 1rem;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+  
+  .titleContainer {
+  
+    margin-top: 15rem;
+  }
+
+  .title{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+
+  .titleP{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
