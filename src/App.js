@@ -8,12 +8,16 @@ import RegUser from "./register/RegUser";
 import UpdtUser from "./update/UpdtUser";
 import UpdtDriver from "./update/UpdtDriver";
 import SetPickup from "./setPickup/SetPickup";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
 
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
+
+
     <BrowserRouter>
     <Routes>
       <Route path="/">

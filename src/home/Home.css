@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+:root {
+    --bs-body-font-family : 'Josefin Sans', sans-serif;
+}
+
 .navbar {
     display: flex;
     justify-content: flex-end;
@@ -34,3 +38,27 @@
     text-align: center;
     margin-top: 1rem;
   }
+
+
+.form-control-dark {
+    border-color: var(--bs-gray);
+}
+.form-control-dark:focus {
+    border-color: #fff;
+    box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+}
+
+.text-small {
+    font-size: 85%;
+}
+
+.dropdown-toggle:not(:focus) {
+    outline: 0;
+}
+
+#custom_nav {
+
+    -webkit-box-shadow: 7px 7px 30px -20px rgba(0,0,0,0.45);
+    -moz-box-shadow: 7px 7px 30px -20px rgba(0,0,0,0.45);
+    box-shadow: 7px 7px 30px -20px rgba(0,0,0,0.45);
+}
