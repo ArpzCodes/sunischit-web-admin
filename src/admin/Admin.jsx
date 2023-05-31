@@ -1,11 +1,11 @@
 import React from 'react';
 import './Admin.css';
-import Sidebar from "../components/sidebar/Sidebar";
+import SidebarTest from "../components/sidebar/SidebarTest";
 
 const Admin = () => {
     return (
         <>
-<Sidebar/>
+            <SidebarTest activePage="home"/>
             <div className="admin-panel">
 
                 <h2 className="list-group">Admin Panel</h2>

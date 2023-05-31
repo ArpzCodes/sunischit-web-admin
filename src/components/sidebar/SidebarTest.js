@@ -15,7 +15,7 @@ const Sidebar = ({activePage}) => {
                     <hr/>
                     <ul className="nav nav-pills flex-column mb-auto" style={{marginBottom: '20px'}}>
                         <li>
-                            <a href="home" className={`nav-link ${activePage === 'home' ? 'active' : 'text-dark'}`}
+                            <a href="admin" className={`nav-link ${activePage === 'home' ? 'active' : 'text-dark'}`}
                                aria-current="page">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="bi pe-none me-2" width="16"
                                      height="16">

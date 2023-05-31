@@ -57,43 +57,43 @@ const RegDriver = () => {
                     {registrationError && <div className="alert alert-warning">{registrationError}</div>}
                     <div className="col-md-6">
                         <label htmlFor="inputEmail4" className="form-label">Email</label>
-                        <input type="email" className="form-control" id="inputEmail4" type="email"
+                        <input type="email" className="form-control" id="inputEmail4"
                                value={email}
                                onChange={(e) => setEmail(e.target.value)}/>
                     </div>
                     <div className="col-md-6">
                         <label htmlFor="inputPassword4" className="form-label">Password</label>
-                        <input type="password" className="form-control" id="inputPassword4" type="password"
+                        <input type="password" className="form-control" id="inputPassword4"
                                value={password}
                                onChange={(e) => setPassword(e.target.value)}/>
                     </div>
                     <div className="col-md-6">
                         <label htmlFor="inputEmail4" className="form-label">First Name</label>
-                        <input type="email" className="form-control" id="inputEmail4" type="text"
+                        <input type="text" className="form-control" id="inputEmail4"
                                value={firstName}
                                onChange={(e) => setFirstName(e.target.value)}/>
                     </div>
                     <div className="col-md-6">
                         <label htmlFor="inputPassword4" className="form-label">Last Name</label>
-                        <input type="password" className="form-control" id="inputPassword4" type="text"
+                        <input type="text" className="form-control" id="inputPassword4"
                                value={lastName}
                                onChange={(e) => setLastName(e.target.value)}/>
                     </div>
                     <div className="col-md-6">
                         <label htmlFor="inputCity" className="form-label">Number</label>
-                        <input type="text" className="form-control" id="inputCity" type="text"
+                        <input type="text" className="form-control" id="inputCity"
                                value={number}
                                onChange={(e) => setNumber(e.target.value)}/>
                     </div>
                     <div className="col-md-4">
                         <label htmlFor="inputState" className="form-label">Route</label>
-                        <input type="text" id="inputState" className="form-control" type="text"
+                        <input type="text" id="inputState" className="form-control"
                                value={route}
                                onChange={(e) => setRoute(e.target.value)}/>
                     </div>
                     <div className="col-md-6">
                         <label htmlFor="BusNum" className="form-label">Bus number</label>
-                        <input type="text" className="form-control" id="BusNum" type="text"
+                        <input type="text" className="form-control" id="BusNum"
                                value={busNo}
                                onChange={(e) => setBusNo(e.target.value)}/>
                     </div>
