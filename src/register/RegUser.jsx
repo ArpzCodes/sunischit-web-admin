@@ -96,7 +96,7 @@ const RegUser = () => {
                                onChange={(e) => setPickup(e.target.value)}/>
                     </div>
                     <div className="col-12">
-                        <button type="submit" className="btn btn-primary">Sign in</button>
+                        <button type="submit" className="btn btn-primary">Register</button>
                     </div>
                 </form>
             </div>
