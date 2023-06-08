@@ -76,6 +76,7 @@ const SetPickup = () => {
 
     return (
         <div className="d-flex">
+
             <SidebarTest activePage="setPickup"/>
             <div className="ps-4 pt-3 container-fluid">
                 <form onSubmit={handleSubmit}>

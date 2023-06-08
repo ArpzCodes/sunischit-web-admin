@@ -37,21 +37,26 @@ const RegUser = () => {
                 route,
             });
 
-            // Show registration success message
+            // Set registration success message to show later
             setRegistrationSuccess("Registration successful!")
         } catch (error) {
-            // Show error message for unsuccessful registration
+            // Set error message for unsuccessful registration
             setRegistrationError(error.message);
         }
     };
 
     return (
+
         <div className="d-flex">
+            {/*Sidebar Test takes activePage to know which page to highlight in sidebar.
+            As the current page is regDriver, activePage is passed as viewUser.*/}
             <SidebarTest activePage="regUser"/>
             <div className="col-md-6 ps-4 pt-3">
                 <h2 className="align-content-center">User Registration Form</h2>
                 <form className="row g-3 pt-3" onSubmit={handleRegistration}>
+                    {/* if registration is done, show an alert box with the success message  */}
                     {registrationSuccess && <div className="alert alert-success">{registrationSuccess}</div>}
+                    {/* if registration is not done, an alert box appears, with the error message   */}
                     {registrationError && <div className="alert alert-warning">{registrationError}</div>}
                     <div className="col-md-6">
                         <label htmlFor="inputEmail4" className="form-label">Email</label>

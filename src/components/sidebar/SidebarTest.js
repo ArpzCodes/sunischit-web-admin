@@ -1,6 +1,7 @@
 import React from 'react';
 import './Sidebar.css'; // Import the CSS file for styling
 
+//A prop for sidebar so that active page can be highlighted.
 const Sidebar = ({activePage}) => {
     return (
         <>
@@ -27,7 +28,10 @@ const Sidebar = ({activePage}) => {
                             </a>
                         </li>
                         <li>
+                            {/*checks if the activePage is regUser, then puts active in the class.
+                            same for all below */}
                             <a href="regUser"
+
                                className={`nav-link ${activePage === 'regUser' ? 'active' : 'text-dark'}`}>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="bi pe-none me-2" width="16"
                                      height="16">
@@ -57,7 +61,7 @@ const Sidebar = ({activePage}) => {
                         {/* List User */}
                         <li>
                             <a href="viewUser"
-                               className={`nav-link ${activePage === 'updtUser' ? 'active' : 'text-dark'}`}>
+                               className={`nav-link ${activePage === 'viewUser' ? 'active' : 'text-dark'}`}>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="bi pe-none me-2" width="16"
                                      height="16">
                                     <path
@@ -67,7 +71,7 @@ const Sidebar = ({activePage}) => {
                                 View User
                             </a>
                         </li>
-                 {/* View Driver */}
+                        {/* View Driver */}
                         <li>
                             <a href="viewDriver"
                                className={`nav-link ${activePage === 'viewDriver' ? 'active' : 'text-dark'}`}>

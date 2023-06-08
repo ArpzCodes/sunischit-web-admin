@@ -26,6 +26,8 @@ const RegDriver = () => {
             // Clear previous error messages, if any
             setRegistrationError('');
             setRegistrationSuccess('');
+            //Registration Success works the same way as error.
+            //These strings are later shown in a text format, rather than alerted by Javascript.
 
             // Save driver details to Firestore
             await db.collection('drivers').doc(userCredential.user.uid).set({
@@ -37,24 +39,31 @@ const RegDriver = () => {
                 route,
             });
 
-            // Show registration success message
+            // Save registration success message to be shown later.
 
             setRegistrationSuccess("Registration successful!")
         } catch (error) {
-            // Show error message for unsuccessful registration
+            // Save message for unsuccessful registration to be shown later.
             setRegistrationError(error.message);
         }
     };
 
     return (
         <div className="d-flex bg-light">
+            {/*Sidebar Test takes activePage to know which page to highlight in sidebar.
+            As the current page is regDriver, activePage is passed as viewUser.*/}
             <SidebarTest activePage="regDriver"/>
 
             <div className="col-md-6 ps-4 pt-3">
                 <h2 className="align-content-center">Driver Registration Form</h2>
                 <form className="row g-3 pt-3" onSubmit={handleRegistration}>
+                    {/* if registration is done, show an alert box with the success message  */}
                     {registrationSuccess && <div className="alert alert-success">{registrationSuccess}</div>}
+                    {/* if registration is not done, an alert box appears, with the error message   */}
                     {registrationError && <div className="alert alert-warning">{registrationError}</div>}
+
+                    {/*form body*/}
+
                     <div className="col-md-6">
                         <label htmlFor="inputEmail4" className="form-label">Email</label>
                         <input type="email" className="form-control" id="inputEmail4"
