@@ -30,7 +30,7 @@ const ViewDriver = () => {
         }
     };
 
-    
+
     const clearUpdateForm = () => {
         setUpdateEmail('');
         setUpdateBusNo('');
@@ -42,7 +42,9 @@ const ViewDriver = () => {
 
     return (
         <div className="d-flex">
-            <SidebarTest activePage="updtDriver"/>
+            {/*Sidebar Test takes activePage to know which page to highlight in sidebar.
+            As the current page is viewUser, activePage is passed as viewUser.*/}
+            <SidebarTest activePage="viewDriver"/>
             <div className=" ps-4 pt-3">
                 <h2>View Drivers</h2>
                 <table className="table  table-bordered">
@@ -54,7 +56,7 @@ const ViewDriver = () => {
                         <th>Last Name</th>
                         <th>Number</th>
                         <th>Route</th>
-                        
+
                     </tr>
                     </thead>
                     <tbody className="table-group-divider">
@@ -67,13 +69,13 @@ const ViewDriver = () => {
                             <td>{driver.lastName}</td>
                             <td>{driver.number}</td>
                             <td>{driver.route}</td>
-                         
+
                         </tr>
                     ))}
                     </tbody>
                 </table>
 
-               
+
             </div>
         </div>
     );

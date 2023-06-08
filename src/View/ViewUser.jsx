@@ -4,7 +4,7 @@ import SidebarTest from "../components/sidebar/SidebarTest";
 
 const ViewUser = () => {
     const [users, setUsers] = useState([]);
-   
+
 
     useEffect(() => {
         fetchUsers();
@@ -23,14 +23,13 @@ const ViewUser = () => {
         }
     };
 
-    
-
-   
-
 
     return (
         <div className="d-flex">
-            <SidebarTest activePage="updtUser"/>
+            {/*Sidebar Test takes activePage to know which page to highlight in sidebar.
+            As the current page is viewUser, activePage is passed as viewUser.
+            */}
+            <SidebarTest activePage="viewUser"/>
             <div className=" ps-4 pt-3">
                 <h2>View Users</h2>
                 <table className="table  table-bordered">
@@ -42,7 +41,7 @@ const ViewUser = () => {
                         <th>Number</th>
                         <th>Pickup</th>
                         <th>Route</th>
-                        
+
                     </tr>
                     </thead>
                     <tbody className="table-group-divider">
@@ -54,15 +53,13 @@ const ViewUser = () => {
                             <td>{user.number}</td>
                             <td>{user.pickup}</td>
                             <td>{user.route}</td>
-                            
+
                         </tr>
                     ))}
                     </tbody>
                 </table>
 
-           
-                 
-             
+
             </div>
         </div>
     );
