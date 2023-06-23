@@ -114,6 +114,7 @@ const UpdtUser = () => {
                                     </button>
                                     <ul className="dropdown-menu">
                                         <li>
+                                            {/*button toggles the model in and out,  */}
                                             <button className="dropdown-item " data-bs-toggle="modal"
                                                     data-bs-target="#exampleModal"
                                                     onClick={() => handleUpdateUser(user)}>Edit
@@ -134,6 +135,8 @@ const UpdtUser = () => {
                     ))}
                     </tbody>
                 </table>
+
+                {/*Modal is static, button pops it in and out. */}
                 <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
                      aria-hidden="true">
                     <div className="modal-dialog">
@@ -143,6 +146,7 @@ const UpdtUser = () => {
                                 <button type="button" className="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                             </div>
+                            {/*  form is loaded in inside body   */}
                             <div className="modal-body">
                                 {updateUser && (
                                     <div>
@@ -202,7 +206,7 @@ const UpdtUser = () => {
                                                 />
                                             </label>
                                             <br/>
-                                            
+
                                         </form>
                                     </div>
                                 )}
