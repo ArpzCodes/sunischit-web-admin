@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {auth} from '../firebase/firebase';
 import {Route, Routes, useNavigate} from 'react-router-dom';
 import "./Login.css"
@@ -7,7 +7,21 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loginError, setLoginError] = useState('');
+    const [loggedIn, setLoggedIn] = useState(false);
+    const [isLoading, setLoading] = useState(true);
     const navigate = useNavigate();
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged((user) => {
+            if (user && user.email === 'admin@gmail.com') {
+                setLoggedIn(true);
+            } else {
+                setLoggedIn(false);
+            }
+            setLoading(false);
+        });
+
+        return () => unsubscribe();
+    }, []);
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -16,13 +30,14 @@ const Login = () => {
 
             auth
                 .signInWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    // Clear previous error messages, if any
-                    setLoginError('');
+                // .then((userCredential) => {
+                //     // Clear previous error messages, if any
+                //     setLoginError('');
 
-                    // Show login successful message
-                    navigate('/admin');
-                })
+
+                //     // Show login successful message
+                //     //
+                // })
                 .catch((error) => {
                     // Show error message for unsuccessful login
                     setLoginError('Invalid email or password');
@@ -32,6 +47,14 @@ const Login = () => {
             setLoginError("Not an admin")
         }
     };
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
+
+    if (loggedIn) {
+        // return <Redirect to="/admin" />;
+        navigate('/admin');
+    }
 
     return (
         <div className="text-center" id="loginpage">
