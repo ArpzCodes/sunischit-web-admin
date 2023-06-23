@@ -118,7 +118,8 @@ const UpdtDriver = () => {
                                     </button>
                                     <ul className="dropdown-menu">
                                         <li>
-                                            <button className="dropdown-item "
+                                            <button className="dropdown-item" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal"
                                                     onClick={() => handleUpdateDriver(driver)}>Edit
                                             </button>
                                         </li>
@@ -139,73 +140,92 @@ const UpdtDriver = () => {
                     </tbody>
                 </table>
 
-                {updateDriver && (
-                    <div>
-                        <h3>Update Driver</h3>
-                        <form>
-                            <label>
-                                Email:
-                                <input
-                                    type="email"
-                                    value={updateEmail}
-                                    onChange={(e) => setUpdateEmail(e.target.value)}
-                                />
-                            </label>
-                            <br/>
-                            <label>
-                                Bus Number:
-                                <input
-                                    type="text"
-                                    value={updateBusNo}
-                                    onChange={(e) => setUpdateBusNo(e.target.value)}
-                                />
-                            </label>
-                            <br/>
-                            <label>
-                                First Name:
-                                <input
-                                    type="text"
-                                    value={updateFirstName}
-                                    onChange={(e) => setUpdateFirstName(e.target.value)}
-                                />
-                            </label>
-                            <br/>
-                            <label>
-                                Last Name:
-                                <input
-                                    type="text"
-                                    value={updateLastName}
-                                    onChange={(e) => setUpdateLastName(e.target.value)}
-                                />
-                            </label>
-                            <br/>
-                            <label>
-                                Number:
-                                <input
-                                    type="text"
-                                    value={updateNumber}
-                                    onChange={(e) => setUpdateNumber(e.target.value)}
-                                />
-                            </label>
-                            <br/>
-                            <label>
-                                Route:
-                                <input
-                                    type="text"
-                                    value={updateRoute}
-                                    onChange={(e) => setUpdateRoute(e.target.value)}
-                                />
-                            </label>
-                            <br/>
-                            <button type="button" onClick={handleSaveUpdate}>
-                                Save
-                            </button>
-                            <button type="button" onClick={clearUpdateForm}>
-                                Cancel
-                            </button>
-                        </form>
+                <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel"
+                     aria-hidden="true">
+                    <div className="modal-dialog">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h1 className="modal-title fs-5" id="exampleModalLabel">Edit Driver</h1>
+                                <button type="button" className="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div className="modal-body">
+                                {updateDriver && (
+                                    <div>
+                                        <form>
+                                            <label>
+                                                Email:
+                                                <input
+                                                    type="email"
+                                                    value={updateEmail}
+                                                    onChange={(e) => setUpdateEmail(e.target.value)}
+                                                />
+                                            </label>
+                                            <br/>
+                                            <label>
+                                                Bus Number:
+                                                <input
+                                                    type="text"
+                                                    value={updateBusNo}
+                                                    onChange={(e) => setUpdateBusNo(e.target.value)}
+                                                />
+                                            </label>
+                                            <br/>
+                                            <label>
+                                                First Name:
+                                                <input
+                                                    type="text"
+                                                    value={updateFirstName}
+                                                    onChange={(e) => setUpdateFirstName(e.target.value)}
+                                                />
+                                            </label>
+                                            <br/>
+                                            <label>
+                                                Last Name:
+                                                <input
+                                                    type="text"
+                                                    value={updateLastName}
+                                                    onChange={(e) => setUpdateLastName(e.target.value)}
+                                                />
+                                            </label>
+                                            <br/>
+                                            <label>
+                                                Number:
+                                                <input
+                                                    type="text"
+                                                    value={updateNumber}
+                                                    onChange={(e) => setUpdateNumber(e.target.value)}
+                                                />
+                                            </label>
+                                            <br/>
+                                            <label>
+                                                Route:
+                                                <input
+                                                    type="text"
+                                                    value={updateRoute}
+                                                    onChange={(e) => setUpdateRoute(e.target.value)}
+                                                />
+                                            </label>
+                                            <br/>
+
+                                        </form>
+                                    </div>
+                                )}
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal"
+                                        onClick={clearUpdateForm}>Close
+                                </button>
+                                <button type="button" className="btn btn-primary" data-bs-dismiss="modal"
+                                        onClick={handleSaveUpdate}>Save
+                                    changes
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                )}
+                </div>
+
+
             </div>
         </div>
     );

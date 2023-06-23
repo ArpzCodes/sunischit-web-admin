@@ -1,8 +1,15 @@
 import React from 'react';
-import './Sidebar.css'; // Import the CSS file for styling
+import './Sidebar.css';
+import {useNavigate} from "react-router-dom";
+import {auth} from "../../firebase/firebase"; // Import the CSS file for styling
 
 //A prop for sidebar so that active page can be highlighted.
 const Sidebar = ({activePage}) => {
+    const navigate = useNavigate();
+    const handleSignOut = () => {
+        auth.signOut()
+        navigate('/');
+    }
     return (
         <>
             <div className="d-flex">
@@ -58,32 +65,7 @@ const Sidebar = ({activePage}) => {
                                 Register Drivers
                             </a>
                         </li>
-                        {/* List User */}
-                        <li>
-                            <a href="viewUser"
-                               className={`nav-link ${activePage === 'viewUser' ? 'active' : 'text-dark'}`}>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="bi pe-none me-2" width="16"
-                                     height="16">
-                                    <path
-                                        d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Zm9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z"/>
 
-                                </svg>
-                                View User
-                            </a>
-                        </li>
-                        {/* View Driver */}
-                        <li>
-                            <a href="viewDriver"
-                               className={`nav-link ${activePage === 'viewDriver' ? 'active' : 'text-dark'}`}>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="bi pe-none me-2" width="16"
-                                     height="16">
-                                    <path
-                                        d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4Zm9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z"/>
-
-                                </svg>
-                                View Drivers
-                            </a>
-                        </li>
                         <li>
                             <a href="updtUser"
                                className={`nav-link ${activePage === 'updtUser' ? 'active' : 'text-dark'}`}>
@@ -140,7 +122,7 @@ const Sidebar = ({activePage}) => {
                             <li>
                                 <hr className="dropdown-divider"/>
                             </li>
-                            <li><a className="dropdown-item" href="#">Sign out</a></li>
+                            <li><a className="dropdown-item" href="#" onClick={handleSignOut}>Sign out</a></li>
                         </ul>
                     </div>
                 </div>
