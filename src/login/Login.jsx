@@ -57,35 +57,49 @@ const Login = () => {
     }
 
     return (
-        <div className="text-center" id="loginpage">
-            <main className="form-signin w-100 m-auto">
-                {loginError && <p>{loginError}</p>}
-                <form onSubmit={handleLogin} className="border-9">
-                    <img className="mb-4" src="https://picsum.photos/700/800" alt="" width="72" height="57"/>
-                    <h1 className="h3 mb-3 fw-normal">Admin Login</h1>
 
-                    <div className="form-floating">
-                        <input type="email" className="form-control" id="floatingInput" value={email}
-                               onChange={(e) => setEmail(e.target.value)} placeholder="name@example.com"/>
-                        <label htmlFor="floatingInput">Email address</label>
-                    </div>
-                    <div className="form-floating">
-                        <input type="password" value={password}
-                               onChange={(e) => setPassword(e.target.value)} className="form-control"
-                               id="floatingPassword" placeholder="Password"/>
-                        <label htmlFor="floatingPassword">Password</label>
-                    </div>
+        <div className="container text-center mt-4">
+            <div className="row">
+                <div className="col">
+                </div>
+                <div className="col mt-5 pt-3 ">
+                    <div className="text-center ms-3 me-3" id="loginpage">
+                        <main className="form-signin mt-3">
+                            {loginError && <p>{loginError}</p>}
+                            <form onSubmit={handleLogin} className="border-9">
+                                <img src="./deerwalkLogo.png" alt="deerwalkLogo" height="80" width="80"
+                                     className="mb-3"/>
 
-                    <div className="checkbox mb-3">
-                        <label>
-                            <input type="checkbox" value="remember-me"/> Remember me
-                        </label>
+                                <h1 className="h3 mb-3 fw-normal">Admin Login</h1>
+
+                                <div className="form-floating mb-1">
+                                    <input type="email" className="form-control" id="floatingInput" value={email}
+                                           onChange={(e) => setEmail(e.target.value)} placeholder="name@example.com"/>
+                                    <label htmlFor="floatingInput">Email address</label>
+                                </div>
+                                <div className="form-floating mb-1">
+                                    <input type="password" value={password}
+                                           onChange={(e) => setPassword(e.target.value)} className="form-control"
+                                           id="floatingPassword" placeholder="Password"/>
+                                    <label htmlFor="floatingPassword">Password</label>
+                                </div>
+
+                                <div className="checkbox mb-3 ">
+                                    <label>
+                                        <input type="checkbox" value="remember-me"/> Remember me
+                                    </label>
+                                </div>
+                                <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                                <p className="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
+                            </form>
+                        </main>
                     </div>
-                    <button className="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-                    <p className="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
-                </form>
-            </main>
+                </div>
+                <div className="col">
+                </div>
+            </div>
         </div>
+
     );
 };
 
