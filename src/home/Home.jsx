@@ -26,11 +26,8 @@ function Home() {
                                 <img src="./deerwalkBus.png" alt=""/>
                             </div>
                         </div>
-                        <div className=" mt-5 d-flex align-items-center justify-content-center ">
-                            <p className='text fs-6'>Developers: Aarnov Adhikari(Backend), Arpan Acharya (Full
-                                Stack), Sashwat Paudel (Frontend) </p>
-                        </div>
-                        <div className=" mt-3 d-flex align-items-center justify-content-center ">
+                        
+                        <div className=" mt-5 pt-5 d-flex align-items-center justify-content-center ">
                             <p className='text  fs-6'><a className=' text-black'
                                                          href="mailto:sunischitapp@gmail.com"> sunischitapp@gmail.com</a>
                             </p>
