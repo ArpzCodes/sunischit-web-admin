@@ -16,7 +16,7 @@ const Sidebar = ({activePage}) => {
                 <div className="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style={{width: '280px'}}>
                     <a href="/"
                        className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                        <img className="bi pe-none me-2" src="https://picsum.photos/200/300" width="40" height="32"
+                        <img className="bi pe-none me-2" src="deerwalkLogo.png" width="50" height="50"
                              alt="Logo"/>
                         <span className="fs-4">Sunischit</span>
                     </a>
