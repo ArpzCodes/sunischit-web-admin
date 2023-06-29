@@ -14,37 +14,39 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 
 function App() {
-  return (
+    return (
+        <>
+            <head>
+                <title>
+                    Sunischit
+                </title>
+            </head>
+
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/">
+                        <Route index element={<Home/>}/>
+                        <Route path="login" element={<Login/>}/>
+                        <Route path="admin" element={<Admin/>}/>
+                        <Route path="regDriver" element={<RegDriver/>}/>
+                        <Route path="regUser" element={<RegUser/>}/>
+                        <Route path="viewUser" element={<ViewUser/>}/>
+                        <Route path="viewDriver" element={<ViewDriver/>}/>
+                        <Route path="updtUser" element={<UpdtUser/>}/>
+                        <Route path="updtDriver" element={<UpdtDriver/>}/>
+                        <Route path="setPickup" element={<SetPickup/>}/>
 
 
-    <BrowserRouter>
-    <Routes>
-      <Route path="/">
-        <Route index element={<Home />} />
-        <Route path="login" element={<Login />} />
-        <Route path="admin" element={<Admin />} />
-        <Route path="regDriver" element={<RegDriver />} />
-        <Route path="regUser" element={<RegUser/>} />
-        <Route path="viewUser" element={<ViewUser/>} />
-        <Route path="viewDriver" element={<ViewDriver/>} />
-        <Route path="updtUser" element={<UpdtUser/>} />
-        <Route path="updtDriver" element={<UpdtDriver/>} />
-        <Route path="setPickup" element={<SetPickup/>} />
-      
-      
-      
-          
-      
-       
-     
-      </Route>
-    </Routes>
-  </BrowserRouter>
-  );
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+
+        </>
+    );
 }
 
 export default App;

@@ -19,7 +19,7 @@ const Sidebar = ({activePage}) => {
                            className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
                             <img className="bi pe-none me-2" src="deerwalkLogo.png" width="50" height="50"
                                  alt="Logo"/>
-                            <span className="fs-4">Sunischit</span>
+                            <span className="fs-4 coloured-blue">Sunischit</span>
                         </a>
                         <hr/>
                         <ul className="nav nav-pills flex-column mb-auto" style={{marginBottom: '20px'}}>

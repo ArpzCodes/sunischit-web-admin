@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {auth, db} from '../firebase/firebase';
 import SidebarTest from "../components/sidebar/SidebarTest";
+import Sidebar from "../components/sidebar/Sidebar";
 
 
 const RegDriver = () => {
@@ -84,7 +85,7 @@ const RegDriver = () => {
                     </div>
                     <div className="col-md-6">
                         <label htmlFor="inputPassword4" className="form-label">Last Name</label>
-                        <input type="text" className="form-control" id="inputPassword4"
+                        <input type="text" className="form-control" id="inputLastname"
                                value={lastName}
                                onChange={(e) => setLastName(e.target.value)}/>
                     </div>
