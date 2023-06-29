@@ -84,9 +84,9 @@ const UpdtDriver = () => {
     };
 
     return (
-        <div className="d-flex">
+        <div className="">
             <SidebarTest activePage="updtDriver"/>
-            <div className=" ps-4 pt-3">
+            <div className=" content ps-4 pt-3">
                 <h2>Update Drivers</h2>
                 <table className="table  table-bordered">
                     <thead>
@@ -153,60 +153,79 @@ const UpdtDriver = () => {
                                 {updateDriver && (
                                     <div>
                                         <form>
-                                            <label>
-                                                Email:
-                                                <input
-                                                    type="email"
-                                                    value={updateEmail}
-                                                    onChange={(e) => setUpdateEmail(e.target.value)}
-                                                />
-                                            </label>
-                                            <br/>
-                                            <label>
-                                                Bus Number:
-                                                <input
-                                                    type="text"
-                                                    value={updateBusNo}
-                                                    onChange={(e) => setUpdateBusNo(e.target.value)}
-                                                />
-                                            </label>
-                                            <br/>
-                                            <label>
-                                                First Name:
-                                                <input
-                                                    type="text"
-                                                    value={updateFirstName}
-                                                    onChange={(e) => setUpdateFirstName(e.target.value)}
-                                                />
-                                            </label>
-                                            <br/>
-                                            <label>
-                                                Last Name:
-                                                <input
-                                                    type="text"
-                                                    value={updateLastName}
-                                                    onChange={(e) => setUpdateLastName(e.target.value)}
-                                                />
-                                            </label>
-                                            <br/>
-                                            <label>
-                                                Number:
-                                                <input
-                                                    type="text"
-                                                    value={updateNumber}
-                                                    onChange={(e) => setUpdateNumber(e.target.value)}
-                                                />
-                                            </label>
-                                            <br/>
-                                            <label>
-                                                Route:
-                                                <input
-                                                    type="text"
-                                                    value={updateRoute}
-                                                    onChange={(e) => setUpdateRoute(e.target.value)}
-                                                />
-                                            </label>
-                                            <br/>
+                                            <div className="mb-3 row">
+                                                {/*Email*/}
+                                                <label htmlFor="staticEmail"
+                                                       className="col-sm-3 col-form-label">Email</label>
+                                                <div className="col-sm-7">
+                                                    <input type="text" readOnly className="form-control-plaintext"
+                                                           id="staticEmail" value={updateEmail}
+                                                           onChange={(e) => setUpdateEmail(e.target.value)}/>
+                                                </div>
+                                            </div>
+                                            {/*Bus number*/}
+                                            <div className="mb-3 row d-flex">
+                                                <label htmlFor="busNum"
+                                                       className="col-sm-3 col-form-label">Bus No.</label>
+                                                <div className="col-sm-7">
+                                                    <input type="text" className="form-control" id="busNum"
+                                                           value={updateBusNo}
+                                                           onChange={(e) => setUpdateBusNo(e.target.value)}
+                                                    />
+                                                </div>
+                                            </div>
+                                            {/*First name*/}
+                                            <div className="mb-3  row">
+                                                <label htmlFor="Fname"
+                                                       className="col-sm-3 col-form-label">First
+                                                    name</label>
+                                                <div className="col-sm-7">
+                                                    <input className="form-control"
+                                                           type="text"
+                                                           value={updateFirstName}
+                                                           onChange={(e) => setUpdateFirstName(e.target.value)}
+                                                           id="Fname"/>
+                                                </div>
+                                            </div>
+
+                                            {/*Last name*/}
+                                            <div className="mb-3 row">
+                                                <label htmlFor="Lname"
+                                                       className="col-sm-3 col-form-label">Last Name</label>
+                                                <div className="col-sm-7">
+                                                    <input className="form-control" id="Lname"
+                                                           type="text"
+                                                           value={updateLastName}
+                                                           onChange={(e) => setUpdateLastName(e.target.value)}
+
+                                                    />
+                                                </div>
+                                            </div>
+                                            {/*Number*/}
+                                            <div className="mb-3 row">
+                                                <label htmlFor="number"
+                                                       className="col-sm-3 col-form-label">Number</label>
+                                                <div className="col-sm-7">
+                                                    <input className="form-control" id="number"
+                                                           type="text"
+                                                           value={updateNumber}
+                                                           onChange={(e) => setUpdateNumber(e.target.value)}
+                                                    />
+                                                </div>
+                                            </div>
+                                            {/*Route*/}
+                                            <div className="mb-3 row">
+                                                <label htmlFor="route"
+                                                       className="col-sm-3 col-form-label">Route</label>
+                                                <div className="col-sm-7">
+                                                    <input className="form-control" id="route"
+                                                           type="text"
+                                                           value={updateRoute}
+                                                           onChange={(e) => setUpdateRoute(e.target.value)}
+                                                    />
+                                                </div>
+                                            </div>
+
 
                                         </form>
                                     </div>

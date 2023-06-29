@@ -47,11 +47,11 @@ const RegUser = () => {
 
     return (
 
-        <div className="d-flex">
+        <div className="">
             {/*Sidebar Test takes activePage to know which page to highlight in sidebar.
             As the current page is regDriver, activePage is passed as viewUser.*/}
             <SidebarTest activePage="regUser"/>
-            <div className="col-md-6 ps-4 pt-3">
+            <div className="col-md-6 ps-4 content pt-3">
                 <h2 className="align-content-center">User Registration Form</h2>
                 <form className="row g-3 pt-3" onSubmit={handleRegistration}>
                     {/* if registration is done, show an alert box with the success message  */}
@@ -94,12 +94,12 @@ const RegUser = () => {
                                value={route}
                                onChange={(e) => setRoute(e.target.value)}/>
                     </div>
-                    <div className="col-md-6">
-                        <label htmlFor="Pickup" className="form-label">Pickup</label>
-                        <input type="text" className="form-control" id="Pickup"
-                               value={pickup}
-                               onChange={(e) => setPickup(e.target.value)}/>
-                    </div>
+                    {/*<div className="col-md-6">*/}
+                    {/*    <label htmlFor="Pickup" className="form-label">Pickup</label>*/}
+                    {/*    <input type="text" className="form-control" id="Pickup"*/}
+                    {/*           value={pickup}*/}
+                    {/*           onChange={(e) => setPickup(e.target.value)}/>*/}
+                    {/*</div>*/}
                     <div className="col-12">
                         <button type="submit" className="btn btn-primary">Register</button>
                     </div>
