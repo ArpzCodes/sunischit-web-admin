@@ -84,6 +84,7 @@
 }
 
 .bi {
+    border-radius: 35%;
     vertical-align: -.125em;
     fill: currentColor;
 }

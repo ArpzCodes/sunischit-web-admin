@@ -15,7 +15,7 @@ const Sidebar = ({activePage}) => {
             <div className="position-fixed">
                 <div className="d-flex">
                     <div className="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style={{width: '280px'}}>
-                        <a href="/"
+                        <a href="/admin"
                            className="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
                             <img className="bi pe-none me-2" src="deerwalkLogo.png" width="50" height="50"
                                  alt="Logo"/>
@@ -110,12 +110,8 @@ const Sidebar = ({activePage}) => {
                             <a href=""
                                className="d-flex align-items-center text-dark text-decoration-none dropdown-toggle"
                                data-bs-toggle="dropdown" aria-expanded="false">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                                     className="rounded-circle me-2" viewBox="0 0 16 16">
-                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                                    <path fill-rule="evenodd"
-                                          d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                                </svg>
+                              <img className="bi pe-none me-2" src="image.png" width="32" height="32" radius
+                                 alt="Logo"/>
                                 <strong>Admin</strong>
                             </a>
                             <ul className="dropdown-menu text-small shadow">

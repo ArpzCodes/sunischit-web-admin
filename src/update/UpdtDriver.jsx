@@ -62,17 +62,33 @@ const UpdtDriver = () => {
         }
     };
 
-    const handleDeleteDriver = async (driverId) => {
+    const handleDeleteDriver = async (userId) => {
         try {
-            await db.collection('drivers').doc(driverId).delete();
-            await auth.currentUser.delete();
-
+          // Make the API request to delete the user
+          const response = await fetch('http://localhost:5000/api/delete-user', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ userId }),
+          });
+      
+          if (response.ok) {
+            // User deleted successfully, update the user list
+            await db.collection('drivers').doc(userId).delete();
+            
+            const updatedDrivers = drivers.filter((user) => user.id !== userId);
             alert('Driver deleted successfully!');
-            fetchDrivers();
+            setDrivers(updatedDrivers);
+        
+          } else {
+            const error = await response.json();
+            throw new Error(error.error); // Show error message
+          }
         } catch (error) {
-            console.error('Error deleting driver:', error);
+          console.error('Error deleting user:', error);
         }
-    };
+      };
 
     const clearUpdateForm = () => {
         setUpdateEmail('');

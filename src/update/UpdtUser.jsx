@@ -61,15 +61,31 @@ const UpdtUser = () => {
 
     const handleDeleteUser = async (userId) => {
         try {
+          // Make the API request to delete the user
+          const response = await fetch('http://localhost:5000/api/delete-user', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ userId }),
+          });
+      
+          if (response.ok) {
+            // User deleted successfully, update the user list
             await db.collection('users').doc(userId).delete();
-            await auth.currentUser.delete();
-
+            const updatedUsers = users.filter((user) => user.id !== userId);
             alert('User deleted successfully!');
-            fetchUsers();
+            setUsers(updatedUsers);
+       
+          } else {
+            const error = await response.json();
+            throw new Error(error.error); // Show error message
+          }
         } catch (error) {
-            console.error('Error deleting user:', error);
+          console.error('Error deleting user:', error);
         }
-    };
+      };
+      
 
     const clearUpdateForm = () => {
         setUpdateEmail('');
